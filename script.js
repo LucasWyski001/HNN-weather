@@ -6,9 +6,10 @@ var listHistory = document.getElementById('history');
 
 var allSearch = [];
 
+
 function searchCity() {
-  var inputCity = document.getElementById('search-bar').value;
-  allSearch.push(inputCity);
+  var searchCity = document.getElementById('search-bar').value;
+  allSearch.push(searchCity);
   localStorage.setItem("Search-History", JSON.stringify(allSearch));
   
   document.getElementById('search-bar').value = '';
@@ -31,7 +32,7 @@ function cityHistory() {
 
 cityHistory();
 
-function getCity() {
+function getCity(inputCity = null) {
   var inputCity = document.getElementById('search-bar').value;
   //console.log(userInput);
   //console.log(searchButton.textContent);
@@ -93,7 +94,7 @@ function getCoor(lat, lon) {
       tenCity.innerText = place + ' ' + formatDate + ' ' + emoji;
 
       var Temp = document.createElement('li');
-      Temp.textContent = 'Temp: ' + Math.floor(temp) + 'F';
+      Temp.textContent = 'Temp: ' + Math.floor(faren) + 'F';
 
       var Humidity = document.createElement('li');
       Humidity.textContent = 'Humidity: ' + humidity;
