@@ -19,7 +19,7 @@ function cityHistory() {
   if (storedCities !== null) {
     allSearch = storedCities;
 
-    for(i = 0; i < storedCities.length; i++) {
+    for(var i = 0; i < storedCities.length; i++) {
       var cityPlacement = storedCities[i];
       var li = document.createElement('button');
       li.textContent = cityPlacement;
@@ -68,6 +68,7 @@ function getCoor(lat, lon) {
       currentDay.innerHTML = '';
 
       var temp = (data.list[0].main.temp);
+      var faren = (temp-273.15)*(9/5)+32;
       var humidity = (data.list[0].main.humidity);
       var wind = (data.list[0].wind.speed);
       var date = (data.list[0].dt_txt);
@@ -75,8 +76,21 @@ function getCoor(lat, lon) {
       var place = (data.city.name);
       var weather = (data.list[0].weather[0].main);
 
+      if(weather == "Clouds")
+      {
+        var emoji = "☁️";
+      }
+      else if(weather == "Clear")
+      {
+        var emoji = "🌥️";
+      }
+      else if(weather == "Rain")
+      {
+        var emoji = "🌧️";
+      }
+
       var tenCity = document.getElementById('tenCity');
-      tenCity.innerText = place + ' ' + formatDate;
+      tenCity.innerText = place + ' ' + formatDate + ' ' + emoji;
 
       var Temp = document.createElement('li');
       Temp.textContent = 'Temp: ' + Math.floor(temp) + 'F';
@@ -86,6 +100,11 @@ function getCoor(lat, lon) {
 
       var Wind = document.createElement('li');
       Wind.textContent = 'Wind: ' + wind;
+
+      var formatDate = dayjs(date).format('(M/D/YYYY)');
+      var place = (data.city.name);
+      var weather = (data.list[0].weather[0].main);
+
 
 
       currentDay.appendChild(Temp);
@@ -110,6 +129,21 @@ function getCoor(lat, lon) {
         var faren = (temp-273.15)*(9/5)+32;
         var wind = (data.list[8].wind.speed);
         var humidity = (data.list[8].main.humidity);
+        var weather = (data.list[8].weather[0].main);
+        var emoji = document.getElementById('emoji1');
+
+        if(weather == "Clouds")
+        {
+          emoji.innerText = "☁️";
+        }
+        else if(weather == "Clear")
+        {
+          emoji.innerText = "🌥️";
+        }
+        else if(weather == "Rain")
+        {
+          emoji.innerText = "🌧️";
+        }
     
         var date1 = document.getElementById('day1');
         date1.innerText = formatDate;
@@ -144,6 +178,21 @@ function getCoor(lat, lon) {
         var faren = (temp-273.15)*(9/5)+32;
         var wind = (data.list[16].wind.speed);
         var humidity = (data.list[16].main.humidity);
+        var weather = (data.list[16].weather[0].main);
+        var emoji = document.getElementById('emoji2');
+
+        if(weather == "Clouds")
+        {
+          emoji.innerText = "☁️";
+        }
+        else if(weather == "Clear")
+        {
+          emoji.innerText = "🌥️";
+        }
+        else if(weather == "Rain")
+        {
+          emoji.innerText = "🌧️";
+        }
     
         var date2 = document.getElementById('day2');
         date2.innerText = formatDate;
@@ -178,6 +227,21 @@ function getCoor(lat, lon) {
         var faren = (temp-273.15)*(9/5)+32;
         var wind = (data.list[24].wind.speed);
         var humidity = (data.list[24].main.humidity);
+        var weather = (data.list[24].weather[0].main);
+        var emoji = document.getElementById('emoji3');
+
+        if(weather == "Clouds")
+        {
+          emoji.innerText = "☁️";
+        }
+        else if(weather == "Clear")
+        {
+          emoji.innerText = "🌥️";
+        }
+        else if(weather == "Rain")
+        {
+          emoji.innerText = "🌧️";
+        }
     
         var date3 = document.getElementById('day3');
         date3.innerText = formatDate;
@@ -212,6 +276,21 @@ function getCoor(lat, lon) {
         var faren = (temp-273.15)*(9/5)+32;
         var wind = (data.list[32].wind.speed);
         var humidity = (data.list[32].main.humidity);
+        var weather = (data.list[32].weather[0].main);
+        var emoji = document.getElementById('emoji4');
+
+        if(weather == "Clouds")
+        {
+          emoji.innerText = "☁️";
+        }
+        else if(weather == "Clear")
+        {
+          emoji.innerText = "🌥️";
+        }
+        else if(weather == "Rain")
+        {
+          emoji.innerText = "🌧️";
+        }
     
         var date4 = document.getElementById('day4');
         date4.innerText = formatDate;
@@ -246,6 +325,21 @@ function getCoor(lat, lon) {
         var faren = (temp-273.15)*(9/5)+32;
         var wind = (data.list[39].wind.speed);
         var humidity = (data.list[39].main.humidity);
+        var weather = (data.list[39].weather[0].main);
+        var emoji = document.getElementById('emoji5');
+
+        if(weather == "Clouds")
+        {
+          emoji.innerText = "☁️";
+        }
+        else if(weather == "Clear")
+        {
+          emoji.innerText = "🌥️";
+        }
+        else if(weather == "Rain")
+        {
+          emoji.innerText = "🌧️";
+        }
     
         var date5 = document.getElementById('day5');
         date5.innerText = formatDate;
