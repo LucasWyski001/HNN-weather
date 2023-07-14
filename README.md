@@ -19,6 +19,10 @@ Daniel Lee : colaborated with JS and HTML documentation
 
 Mica Villanueva : collaborated with JS HTML, and functions of JS
 
+## Links
+https://github.com/LucasWyski001/HNN-weather
+![webpage screenshot](weather-app.jpg)
+
 ## License
 
 MIT License
